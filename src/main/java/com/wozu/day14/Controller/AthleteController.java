@@ -32,4 +32,19 @@ public class AthleteController {
         return "athlete saved";
     }
 
+    // update method
+    @PutMapping("/put/athlete/{id}")
+    public Optional<Athlete> updateAthlete(@RequestBody Athlete newAthlete, @PathVariable Long id){
+        return athleteServiceImpl.updateAthlete(newAthlete, id);
+    }
+
+
+    // delete method
+
+    @DeleteMapping("/delete/athlete/{id}")
+    public String deleteAthlete(@PathVariable Long id){
+        athleteServiceImpl.removeAthlete(id);
+        return "athlete deleted";
+    }
+
 }
