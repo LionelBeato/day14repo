@@ -16,7 +16,10 @@ public class AthleteController {
     @Autowired
     AthleteServiceImpl athleteServiceImpl;
 
-    //get method
+    /*
+     * Our get method will work by
+     * having an id as an input and
+     */
     @GetMapping("/get/athlete/{id}")
     public Optional<Athlete> getAthleteById(@PathVariable Long id){
         return athleteServiceImpl.getAthleteById(id);
